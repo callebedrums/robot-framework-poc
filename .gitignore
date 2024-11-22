@@ -1,4 +1,5 @@
 browser
+results
 *.html
 *.xml
-*.txt
+*log.txt

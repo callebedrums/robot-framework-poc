@@ -2,7 +2,7 @@
 Documentation    Robot Framework PoC
 ...
 ...              This is a PoC for Robot Framework
-Resource         poc.keywords.resource
+Resource         ../resources/poc.keywords.resource
 Default Tags     positive
 
 *** Test Cases ***
