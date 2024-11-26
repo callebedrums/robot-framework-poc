@@ -9,8 +9,8 @@ trigger:
       - ./README.md
 
 pool:
-  vmImage: python:3.8
-  # vmImage: nikolaik/python-nodejs:python3.9-nodejs20
+  # vmImage: python:3.8
+  vmImage: nikolaik/python-nodejs:python3.9-nodejs20
 
 steps:
   - script: pip install -r requirements.txt
