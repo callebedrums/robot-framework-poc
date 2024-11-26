@@ -10,10 +10,17 @@ trigger:
 
 pool:
   vmImage: python:3.8
+  # vmImage: nikolaik/python-nodejs:python3.9-nodejs20
 
 steps:
   - script: pip install -r requirements.txt
     displayName: "Install dependencies"
+
+  - script: node -v
+    displayName: "Node Version"
+
+  - script: rfbrowser init
+    displayName: "Initialize RF Browser"
 
   - script: robot .
     displayName: "Running Robot Tests"
