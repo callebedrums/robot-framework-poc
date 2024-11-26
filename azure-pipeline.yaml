@@ -32,5 +32,6 @@ steps:
       testResultsFormat: "XUnit"
       testResultsFiles: "**/results/xunit.xml"
       testRunTitle: "Robot Framework Test Results"
+      searchFolder: "$(System.DefaultWorkingDirectory)"
       mergeTestResults: true
       failTaskOnFailedTests: false
