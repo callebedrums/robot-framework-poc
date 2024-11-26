@@ -25,21 +25,13 @@ steps:
   - script: robot --xunit xunit.xml --outputdir ./results ./tests
     displayName: "Running Robot Tests"
 
-  - task: PublishTestResults@2
-    condition: always()
-    displayName: "Publish Test Results"
-    inputs:
-      testResultsFormat: "XUnit"
-      testResultsFiles: "**/results/xunit.xml"
-      testRunTitle: "Robot Framework Test Results"
-      searchFolder: "$(System.DefaultWorkingDirectory)"
-      mergeTestResults: true
-      failTaskOnFailedTests: false
-
-  - task: PublishHtmlReport@1
-    condition: always()
-    displayName: "Publish HTML Report"
-    inputs:
-      reportDir: "$(ResultsPath)/log.html"
-      reportName: "Robot Framework Test Report"
-      reportTitle: "Robot Framework Test Report"
+  # - task: PublishTestResults@2
+  #   condition: always()
+  #   displayName: "Publish Test Results"
+  #   inputs:
+  #     testResultsFormat: "XUnit"
+  #     testResultsFiles: "**/results/xunit.xml"
+  #     testRunTitle: "Robot Framework Test Results"
+  #     searchFolder: "$(System.DefaultWorkingDirectory)"
+  #     mergeTestResults: true
+  #     failTaskOnFailedTests: false
