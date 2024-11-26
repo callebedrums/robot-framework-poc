@@ -3,8 +3,6 @@ trigger:
     include:
       - "*"
   paths:
-    include:
-      - ./*
     exclude:
       - ./README.md
 
@@ -32,7 +30,7 @@ steps:
     displayName: "Publish Test Results"
     inputs:
       testResultsFormat: "JUnit"
-      testResultsFiles: "./results/*.xml"
+      testResultsFiles: "**/results/*.xml"
       testRunTitle: "Robot Framework Test Results"
       mergeTestResults: true
       failTaskOnFailedTests: false
