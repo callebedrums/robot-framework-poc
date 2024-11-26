@@ -25,6 +25,12 @@ steps:
   - script: robot --xunit xunit.xml --outputdir ./results ./tests
     displayName: "Running Robot Tests"
 
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: "./results"
+      artifact: "results"
+      publishLocation: "pipeline"
+
   # - task: PublishTestResults@2
   #   condition: always()
   #   displayName: "Publish Test Results"
