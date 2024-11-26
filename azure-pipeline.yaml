@@ -9,15 +9,18 @@ trigger:
       - ./README.md
 
 pool:
-  # vmImage: python:3.8
-  vmImage: nikolaik/python-nodejs:python3.9-nodejs20
+  vmImage: ubuntu-latest
+  # vmImage: nikolaik/python-nodejs:python3.9-nodejs20
 
 steps:
-  - script: pip install -r requirements.txt
-    displayName: "Install dependencies"
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "20.x"
+    displayName: "Install Node.js"
 
-  - script: node -v
-    displayName: "Node Version"
+  - script: pip install --upgrade pip
+      pip install -r requirements.txt
+    displayName: "Install dependencies"
 
   - script: rfbrowser init
     displayName: "Initialize RF Browser"
