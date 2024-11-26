@@ -24,5 +24,16 @@ steps:
   - script: rfbrowser init
     displayName: "Initialize RF Browser"
 
-  - script: robot .
+  - script: robot --outputdir ./results ./tests
     displayName: "Running Robot Tests"
+  
+  - task: PublishTestResults@2
+    condition: always()
+    displayName: "Publish Test Results"
+      inputs:
+        testResultsFormat: "JUnit"
+        testResultsFiles: "./results/*.xml"
+        testRunTitle: "Robot Framework Test Results"
+        mergeTestResults: true
+        failTaskOnFailedTests: false
+
