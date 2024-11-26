@@ -35,3 +35,11 @@ steps:
       searchFolder: "$(System.DefaultWorkingDirectory)"
       mergeTestResults: true
       failTaskOnFailedTests: false
+
+  - task: PublishHtmlReport@1
+    condition: always()
+    displayName: "Publish HTML Report"
+    inputs:
+      reportDir: "$(ResultsPath)/log.html"
+      reportName: "Robot Framework Test Report"
+      reportTitle: "Robot Framework Test Report"
