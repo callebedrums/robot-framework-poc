@@ -22,5 +22,5 @@ rfbrowser init
 ## executing test
 
 ```shell
-robot --outputdir ./results ./tests
+robot --xunit xunit.xml --outputdir ./results ./tests
 ```
