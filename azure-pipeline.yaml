@@ -18,8 +18,7 @@ steps:
       versionSpec: "20.x"
     displayName: "Install Node.js"
 
-  - script: pip install --upgrade pip
-      pip install -r requirements.txt
+  - script: pip install --upgrade pip && pip install -r requirements.txt
     displayName: "Install dependencies"
 
   - script: rfbrowser init
