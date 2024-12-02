@@ -1,17 +1,22 @@
 *** Settings ***
 Documentation    Robot Framework PoC. BrowserLibrary is used for browser automation.
 ...              BrowserLibrary is preferable over SeleniumLibrary because it pierces through shadow DOM automatically, and is more sutable for testing web components.
-Library          Browser
+Library          Browser    jsextension=${CURDIR}/../custom/poc.js
 
 *** Variables ***
 ${BROWSER}       chromium
 ${HEADLESS}      True
 ${URL}           https://micro-frontend-solution-dev.nonprod.pip.cnh.com/
+${SPEED}         %{TEST_SPEED=Speed Default}
 
 *** keywords ***
-Navigate to Micro-Frontend Home Page
+Global Setup
+    New Page
+    setupThrottle    ${SPEED}
+
+Micro-Frontend Home Page is Open
     # Open Browser    ${URL}    ${BROWSER}    ${HEADLESS}
-    New Page    ${URL}
+    Go To    ${URL}
     Get Title     should be    Micro-Frontend Solution
 
 Test for Micro-Frontend Home Page
