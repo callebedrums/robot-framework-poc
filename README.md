@@ -14,6 +14,12 @@ pip install robotframework
 # check if it was installed
 robot --version
 
+
+# install Selenium Library
+pip install --upgrade robotframework-seleniumlibrary
+## manually download chrome-driver and place in a location that is in the PATH environment
+
+
 # install Browser Library based on playwright
 pip install --upgrade robotframework-browser
 rfbrowser init
@@ -22,7 +28,11 @@ rfbrowser init
 ## executing test
 
 ```shell
-robot --xunit xunit.xml --outputdir ./results ./tests
+## running just browser-library
+robot --xunit xunit.xml --outputdir ./results/browser-library ./tests/browser-library
+
+## running just selenium-library
+robot --xunit xunit.xml --outputdir ./results/selenium-library ./tests/selenium-library
 ```
 
 The Chromium browser has the capacity to simulate different network speeds.

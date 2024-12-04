@@ -2,7 +2,7 @@
 Documentation    Robot Framework PoC
 ...
 ...              This is a PoC for Robot Framework
-Resource         ../resources/poc.keywords.resource
+Resource         ./resources/poc.keywords.resource
 Suite Setup      Global Setup
 Default Tags     positive
 
