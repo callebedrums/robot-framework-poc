@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Robot Framework PoC. BrowserLibrary is used for browser automation.
 ...              BrowserLibrary is preferable over SeleniumLibrary because it pierces through shadow DOM automatically, and is more sutable for testing web components.
-Library          Browser    jsextension=${CURDIR}/../custom/poc.js
+Library          Browser    jsextension=${CURDIR}/../custom/setupThrottle.js
 
 *** Variables ***
 ${BROWSER}       chromium

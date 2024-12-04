@@ -4,6 +4,7 @@
 
 Python 3
 pip
+nodejs
 
 ## Robot Framework installation
 
@@ -16,8 +17,9 @@ robot --version
 
 
 # install Selenium Library
+# install chromedriver
 pip install --upgrade robotframework-seleniumlibrary
-## manually download chrome-driver and place in a location that is in the PATH environment
+npm install chromedriver
 
 
 # install Browser Library based on playwright
