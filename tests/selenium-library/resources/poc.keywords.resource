@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Robot Framework PoC. SeleniumLibrary is used for browser automation.
-Library          SeleniumLibrary    plugins=${CURDIR}\\..\\custom\\SetupThrottle.py
+Library          SeleniumLibrary    plugins=${CURDIR}/../custom/SetupThrottle.py
 
 *** Variables ***
 ${BROWSER}       Headless Chrome
