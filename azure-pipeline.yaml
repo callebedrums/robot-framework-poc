@@ -16,7 +16,7 @@ steps:
       versionSpec: "20.x"
     displayName: "Install Node.js"
 
-  - script: pip install --upgrade pip && pip install -r requirements.txt
+  - script: pip install --upgrade pip && pip install -r requirements.txt && npm install chromedriver
     displayName: "Install dependencies"
 
   - script: rfbrowser init
@@ -24,6 +24,9 @@ steps:
 
   - script: robot --xunit xunit.xml --outputdir ./results/browser-library ./tests/browser-library
     displayName: "Running Robot Tests with Browser Library"
+
+  - script: robot --xunit xunit.xml --outputdir ./results/selenium-library ./tests/selenium-library
+    displayName: "Running Robot Tests with Selenium Library"
 
   # Publish test results as pipeline artifact
   - task: PublishPipelineArtifact@1

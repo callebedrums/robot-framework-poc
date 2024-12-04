@@ -1,5 +1,7 @@
 browser
 results
+node_modules
 *.html
 *.xml
 *log.txt
+package*.json
