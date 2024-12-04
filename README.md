@@ -49,7 +49,11 @@ TEST_SPEED='Speed 1' robot --xunit xunit.xml --outputdir ./results ./tests
 ### References
 
 - [Chromium throttle](https://github.com/microsoft/playwright/issues/6038#issuecomment-812521882)
+- [Selenium Chrome driver](https://www.selenium.dev/selenium/docs/api/py/_modules/selenium/webdriver/chromium/webdriver.html)
+- [Extending Selenium Library with python](https://github.com/robotframework/SeleniumLibrary/blob/master/docs/extending/extending.rst)
 - [Extending Browser Library with JavaScript](https://marketsquare.github.io/robotframework-browser/Browser.html#Extending%20Browser%20library%20with%20a%20JavaScript%20module)
+- [Browser Library Key Words](https://marketsquare.github.io/robotframework-browser/Browser.html)
+- [Selenium Library Key Words](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
 - [Robot Framework Variables](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variables)
 - [Robot Framework Environment Variables](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#environment-variables)
 - [Robot Framework Test Suite setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown)
