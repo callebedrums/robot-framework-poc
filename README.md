@@ -57,3 +57,44 @@ TEST_SPEED='Speed 1' robot --xunit xunit.xml --outputdir ./results ./tests
 - [Robot Framework Variables](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#variables)
 - [Robot Framework Environment Variables](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#environment-variables)
 - [Robot Framework Test Suite setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown)
+
+### Azure pieline
+
+```yaml
+trigger:
+  branches:
+    include:
+      - "*"
+  paths:
+    exclude:
+      - ./README.md
+
+pool:
+  vmImage: ubuntu-latest
+  # vmImage: nikolaik/python-nodejs:python3.9-nodejs20
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "20.x"
+    displayName: "Install Node.js"
+
+  - script: pip install --upgrade pip && pip install -r requirements.txt && npm install chromedriver
+    displayName: "Install dependencies"
+
+  - script: rfbrowser init
+    displayName: "Initialize RF Browser"
+
+  - script: robot --xunit xunit.xml --outputdir ./results/browser-library ./tests/browser-library
+    displayName: "Running Robot Tests with Browser Library"
+
+  - script: robot --xunit xunit.xml --outputdir ./results/selenium-library ./tests/selenium-library
+    displayName: "Running Robot Tests with Selenium Library"
+
+  # Publish test results as pipeline artifact
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: "./results"
+      artifact: "results"
+      publishLocation: "pipeline"
+```
